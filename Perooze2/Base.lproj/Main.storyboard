@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="z4j-lw-bBc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Welcome to Perooze!-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Perooze2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,176 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="mny-RJ-Dlw">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="he0-fC-F5n">
+                                <rect key="frame" x="182" y="152" width="229" height="97"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MVG-PO-ZH7">
+                                        <rect key="frame" x="53" y="0.0" width="123" height="39"/>
+                                        <color key="backgroundColor" red="0.16519691859999999" green="0.33184244509999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Take Photo">
+                                                    <attributes>
+                                                        <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <font key="NSFont" size="24" name="Palatino-Bold"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="takePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oxZ-VF-7ON"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mUu-FU-iZK">
+                                        <rect key="frame" x="0.0" y="59" width="229" height="39"/>
+                                        <color key="backgroundColor" red="0.16519691859999999" green="0.33184244509999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Choose from Library">
+                                                    <attributes>
+                                                        <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <font key="NSFont" size="24" name="Palatino-Bold"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="choosePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cH5-H4-H5J"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="mny-RJ-Dlw" secondAttribute="trailing" id="PAo-h2-JDn"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mny-RJ-Dlw" secondAttribute="bottom" id="Xxj-qV-VU9"/>
+                            <constraint firstItem="mny-RJ-Dlw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="YW4-zh-GEa"/>
+                            <constraint firstItem="mny-RJ-Dlw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="sU2-Gs-tGW"/>
+                            <constraint firstItem="he0-fC-F5n" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="88" id="wXf-gJ-i00"/>
+                            <constraint firstItem="he0-fC-F5n" firstAttribute="centerX" secondItem="mny-RJ-Dlw" secondAttribute="centerX" id="y6n-lr-h3y"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Welcome to Perooze!" id="GgV-a6-y76"/>
+                    <connections>
+                        <outlet property="choosePhotoButton" destination="mUu-FU-iZK" id="1h7-jF-VFu"/>
+                        <outlet property="takePhotoButton" destination="MVG-PO-ZH7" id="zdJ-82-uCP"/>
+                        <segue destination="iDk-tn-AJt" kind="show" identifier="ShowImage" id="QBT-zF-VDw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1573" y="254"/>
+        </scene>
+        <!--Image-->
+        <scene sceneID="i8C-yw-TG3">
+            <objects>
+                <viewController id="iDk-tn-AJt" customClass="ImageViewController" customModule="Perooze2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wRb-l8-pXo"/>
+                        <viewControllerLayoutGuide type="bottom" id="pHS-0u-Npv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AUv-sn-c5T">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y1v-CV-eOk">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="y1v-CV-eOk" secondAttribute="trailing" id="5eQ-0L-wVq"/>
+                            <constraint firstItem="y1v-CV-eOk" firstAttribute="leading" secondItem="AUv-sn-c5T" secondAttribute="leading" id="Tnx-0o-dQn"/>
+                            <constraint firstItem="pHS-0u-Npv" firstAttribute="top" secondItem="y1v-CV-eOk" secondAttribute="bottom" id="ab9-ug-tsP"/>
+                            <constraint firstItem="y1v-CV-eOk" firstAttribute="top" secondItem="wRb-l8-pXo" secondAttribute="bottom" id="r1F-X3-TNt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Image" id="4SB-Uc-ZEx">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="9Zj-qt-BwL">
+                            <connections>
+                                <action selector="askForWord:" destination="iDk-tn-AJt" id="m7l-9t-ZFA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="y1v-CV-eOk" id="3l8-7R-7bQ"/>
+                        <segue destination="rLk-fE-xj5" kind="show" identifier="Try Text" id="QGK-2X-bA6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bfQ-0M-70V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2309" y="254"/>
+        </scene>
+        <!--Text View Controller-->
+        <scene sceneID="AnY-zE-o1G">
+            <objects>
+                <viewController id="rLk-fE-xj5" customClass="TextViewController" customModule="Perooze2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g8o-Wh-vUW"/>
+                        <viewControllerLayoutGuide type="bottom" id="iSY-oC-Zgg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1WZ-NZ-VnE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="K9S-yH-B8V">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="K9S-yH-B8V" firstAttribute="leading" secondItem="1WZ-NZ-VnE" secondAttribute="leading" id="1E2-sY-q5b"/>
+                            <constraint firstAttribute="trailing" secondItem="K9S-yH-B8V" secondAttribute="trailing" id="3nf-bq-9oh"/>
+                            <constraint firstItem="K9S-yH-B8V" firstAttribute="top" secondItem="g8o-Wh-vUW" secondAttribute="bottom" id="C5d-aP-Ix5"/>
+                            <constraint firstItem="iSY-oC-Zgg" firstAttribute="top" secondItem="K9S-yH-B8V" secondAttribute="bottom" id="YuV-Rm-MAQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="outputText" destination="K9S-yH-B8V" id="Ln7-P3-ZnT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jUr-Hc-8h0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3007" y="254"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xCl-rV-feZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="z4j-lw-bBc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fJX-Qk-16o">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Kkw-DO-pfZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iIr-f9-nzf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="890" y="254"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image" width="384" height="512"/>
+    </resources>
 </document>
