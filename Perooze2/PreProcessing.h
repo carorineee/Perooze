@@ -1,6 +1,6 @@
 //
 //  PreProcessing.h
-//  Perooze2
+//  Perooze
 //
 //  Created by Caroline Shi on 11/19/15.
 //  Copyright © 2015 NapperApps. All rights reserved.

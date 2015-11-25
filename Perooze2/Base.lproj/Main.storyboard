@@ -8,7 +8,7 @@
         <!--Welcome to Perooze!-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Perooze2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Perooze" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -17,43 +17,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="mny-RJ-Dlw">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image3" translatesAutoresizingMaskIntoConstraints="NO" id="mny-RJ-Dlw">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="he0-fC-F5n">
-                                <rect key="frame" x="182" y="152" width="229" height="97"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="he0-fC-F5n">
+                                <rect key="frame" x="186" y="252" width="250" height="98"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MVG-PO-ZH7">
-                                        <rect key="frame" x="53" y="0.0" width="123" height="39"/>
-                                        <color key="backgroundColor" red="0.16519691859999999" green="0.33184244509999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="145" placeholderIntrinsicHeight="39" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MVG-PO-ZH7">
+                                        <rect key="frame" x="53" y="0.0" width="145" height="39"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="145" id="O4j-5I-xep"/>
+                                            <constraint firstAttribute="height" constant="39" id="Ta4-qq-n43"/>
+                                        </constraints>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Take Photo">
                                                     <attributes>
                                                         <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <font key="NSFont" size="24" name="Palatino-Bold"/>
+                                                        <font key="NSFont" size="24" name="GillSans-SemiBold"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="15"/>
+                                                <integer key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="takePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oxZ-VF-7ON"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mUu-FU-iZK">
-                                        <rect key="frame" x="0.0" y="59" width="229" height="39"/>
-                                        <color key="backgroundColor" red="0.16519691859999999" green="0.33184244509999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="250" placeholderIntrinsicHeight="39" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mUu-FU-iZK">
+                                        <rect key="frame" x="0.0" y="59" width="250" height="39"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="39" id="gK9-o3-b4P"/>
+                                            <constraint firstAttribute="width" constant="250" id="wlM-oF-x7H"/>
+                                        </constraints>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Choose from Library">
                                                     <attributes>
                                                         <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <font key="NSFont" size="24" name="Palatino-Bold"/>
+                                                        <font key="NSFont" size="24" name="GillSans-SemiBold"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
@@ -68,17 +76,43 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="mUu-FU-iZK" secondAttribute="trailing" id="0kH-z1-GkR"/>
+                                    <constraint firstItem="MVG-PO-ZH7" firstAttribute="top" secondItem="he0-fC-F5n" secondAttribute="top" id="RnH-eP-hBy"/>
+                                    <constraint firstAttribute="bottom" secondItem="mUu-FU-iZK" secondAttribute="bottom" id="XYC-mV-qbj"/>
+                                    <constraint firstAttribute="trailing" secondItem="MVG-PO-ZH7" secondAttribute="trailing" constant="53" id="cQj-jH-Nfi"/>
+                                    <constraint firstItem="MVG-PO-ZH7" firstAttribute="leading" secondItem="he0-fC-F5n" secondAttribute="leading" constant="53" id="i1h-hv-kRI"/>
+                                    <constraint firstItem="mUu-FU-iZK" firstAttribute="leading" secondItem="he0-fC-F5n" secondAttribute="leading" id="uxG-0y-j3D"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="RnH-eP-hBy"/>
+                                        <exclude reference="cQj-jH-Nfi"/>
+                                        <exclude reference="i1h-hv-kRI"/>
+                                        <exclude reference="0kH-z1-GkR"/>
+                                        <exclude reference="XYC-mV-qbj"/>
+                                        <exclude reference="uxG-0y-j3D"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="he0-fC-F5n" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="88" id="9Y7-uH-37r"/>
+                            <constraint firstItem="he0-fC-F5n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="11.5" id="JaP-6E-yN7"/>
                             <constraint firstAttribute="trailing" secondItem="mny-RJ-Dlw" secondAttribute="trailing" id="PAo-h2-JDn"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mny-RJ-Dlw" secondAttribute="bottom" id="Xxj-qV-VU9"/>
                             <constraint firstItem="mny-RJ-Dlw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="YW4-zh-GEa"/>
                             <constraint firstItem="mny-RJ-Dlw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="sU2-Gs-tGW"/>
-                            <constraint firstItem="he0-fC-F5n" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="88" id="wXf-gJ-i00"/>
-                            <constraint firstItem="he0-fC-F5n" firstAttribute="centerX" secondItem="mny-RJ-Dlw" secondAttribute="centerX" id="y6n-lr-h3y"/>
+                            <constraint firstItem="he0-fC-F5n" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="182" id="ueZ-I8-DXU"/>
+                            <constraint firstItem="he0-fC-F5n" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="1" id="vr1-BN-TWg"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="9Y7-uH-37r"/>
+                                <exclude reference="ueZ-I8-DXU"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Welcome to Perooze!" id="GgV-a6-y76"/>
                     <connections>
@@ -94,7 +128,7 @@
         <!--Image-->
         <scene sceneID="i8C-yw-TG3">
             <objects>
-                <viewController id="iDk-tn-AJt" customClass="ImageViewController" customModule="Perooze2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="iDk-tn-AJt" customClass="ImageViewController" customModule="Perooze" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wRb-l8-pXo"/>
                         <viewControllerLayoutGuide type="bottom" id="pHS-0u-Npv"/>
@@ -116,9 +150,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Image" id="4SB-Uc-ZEx">
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="9Zj-qt-BwL">
+                        <barButtonItem key="rightBarButtonItem" title="Scan" id="9Zj-qt-BwL">
                             <connections>
-                                <action selector="askForWord:" destination="iDk-tn-AJt" id="m7l-9t-ZFA"/>
+                                <action selector="scan:" destination="iDk-tn-AJt" id="C6e-gX-NyC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -131,10 +165,10 @@
             </objects>
             <point key="canvasLocation" x="2309" y="254"/>
         </scene>
-        <!--Text View Controller-->
+        <!--Output Text-->
         <scene sceneID="AnY-zE-o1G">
             <objects>
-                <viewController id="rLk-fE-xj5" customClass="TextViewController" customModule="Perooze2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rLk-fE-xj5" customClass="TextViewController" customModule="Perooze" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g8o-Wh-vUW"/>
                         <viewControllerLayoutGuide type="bottom" id="iSY-oC-Zgg"/>
@@ -146,7 +180,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="K9S-yH-B8V">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -158,6 +192,13 @@
                             <constraint firstItem="iSY-oC-Zgg" firstAttribute="top" secondItem="K9S-yH-B8V" secondAttribute="bottom" id="YuV-Rm-MAQ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Output Text" id="3J4-rK-tFk">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="ppT-EX-r8u">
+                            <connections>
+                                <action selector="searchWord:" destination="rLk-fE-xj5" id="uNB-nx-J60"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="outputText" destination="K9S-yH-B8V" id="Ln7-P3-ZnT"/>
                     </connections>
@@ -186,6 +227,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="384" height="512"/>
+        <image name="image3" width="226" height="320"/>
     </resources>
 </document>

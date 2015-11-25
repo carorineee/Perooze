@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Perooze2
+//  Perooze
 //
 //  Created by Caroline Shi on 11/12/15.
 //  Copyright © 2015 NapperApps. All rights reserved.
@@ -13,6 +13,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     //MARK: Properties
     @IBOutlet weak var takePhotoButton: UIButton!
     @IBOutlet weak var choosePhotoButton: UIButton!
+    
     
     
     //MARK: Image selection
@@ -31,6 +32,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePickCon.delegate = self
         presentViewController(imagePickCon, animated: true, completion: nil)
         
+        
     }
     
     @IBAction func choosePhoto(sender: UIButton) {
@@ -38,6 +40,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePickCon.sourceType = .PhotoLibrary
         imagePickCon.delegate = self
         presentViewController(imagePickCon, animated: true, completion: nil)
+        
         
     }
     
@@ -51,6 +54,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        takePhotoButton.layer.borderWidth = 2
+        takePhotoButton.layer.borderColor = UIColor.whiteColor().CGColor
+
+        choosePhotoButton.layer.borderWidth = 2
+        choosePhotoButton.layer.borderColor = UIColor.whiteColor().CGColor
     }
 
     override func didReceiveMemoryWarning() {

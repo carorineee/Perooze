@@ -77,14 +77,22 @@ class ProcessAndOCR: NSObject, G8TesseractDelegate {
     func recognizeImage(image: UIImage) -> String {
         let tesseract:G8Tesseract = G8Tesseract(language:"eng");
         //tesseract.setVariableValue("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
-           // forKey: "tessedit_char_whitelist")
+          // forKey: "tessedit_char_whitelist")
         tesseract.delegate = self
-        tesseract.charWhitelist = "01234567890";
+        tesseract.charWhitelist = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
         tesseract.engineMode = .TesseractCubeCombined
         tesseract.pageSegmentationMode = .Auto
         tesseract.maximumRecognitionTime = 20.0
         
-        tesseract.image = image.g8_blackAndWhite()
+        //Process
+        
+        tesseract.analyseLayout()
+        NSLog("%@", tesseract.deskewAngle)
+        
+        
+        
+        tesseract.image = image.g8_grayScale()
+        tesseract.sourceResolution = 330
         tesseract.recognize()
         NSLog("%@", tesseract.recognizedText)
         

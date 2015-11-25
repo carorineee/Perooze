@@ -1,6 +1,6 @@
 //
 //  TextViewController.swift
-//  Perooze2
+//  Perooze
 //
 //  Created by Caroline Shi on 11/18/15.
 //  Copyright © 2015 NapperApps. All rights reserved.
@@ -14,7 +14,33 @@ class TextViewController: UIViewController {
     
     @IBOutlet weak var outputText: UITextView!
     var text: String?
-    var searchWord: String?
+    var searchWord: String = ""
+    
+    
+    @IBAction func searchWord(sender: AnyObject) {
+        
+        let alertController = UIAlertController(title: "Search", message: "Enter a search word below.", preferredStyle: .Alert)
+        
+        //Search word
+        alertController.addTextFieldWithConfigurationHandler { (searchWordTextField) -> Void in
+            searchWordTextField.placeholder = "Enter search word here"
+        }
+        
+        
+        let searchAction = UIAlertAction(title: "Search", style: .Default) { action in
+
+            let searchWord = (alertController.textFields![0] as UITextField).text
+            self.highlightWord(self.text!, word: searchWord!)
+        
+        }
+        
+        alertController.addAction(searchAction)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    
     
     func findSubstring(substring: String, inString string: String) -> [NSRange] {
         let string = NSString(string: string)
@@ -39,24 +65,24 @@ class TextViewController: UIViewController {
     }
     
     
-    func highlightWord(text: String, word: String){
+    func highlightWord(text: String, word: String) {
         
-        let ranges = findSubstring(searchWord!, inString: text)
-        let attributed = NSMutableAttributedString(string: text)
+        let ranges = findSubstring(searchWord, inString: text)
+        let attributedText = NSMutableAttributedString(string: text)
 
         for i in 0..<ranges.count {
-            attributed.addAttribute(NSBackgroundColorAttributeName, value: UIColor.yellowColor(), range: ranges[i])}
+            attributedText.addAttribute(NSBackgroundColorAttributeName, value: UIColor.yellowColor(), range: ranges[i])
+
+        }
         
-        outputText.text = String(attributed)
+        outputText.attributedText = attributedText
+        
     }
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        highlightWord(text!, word: searchWord!)
-
-        
+        outputText.text = text
 
         // Do any additional setup after loading the view.
     }
