@@ -84,10 +84,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods/GPUImage.framework"
   install_framework "Pods/MBProgressHUD.framework"
   install_framework "Pods/TesseractOCR.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods/GPUImage.framework"
   install_framework "Pods/MBProgressHUD.framework"
   install_framework "Pods/TesseractOCR.framework"
 fi

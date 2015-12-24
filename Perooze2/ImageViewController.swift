@@ -22,15 +22,15 @@ class ImageViewController: UIViewController, G8TesseractDelegate {
         
         let loadingNotification = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         loadingNotification.mode = MBProgressHUDMode.Indeterminate
+
         loadingNotification.labelText = "Processing the Image"
-        loadingNotification.detailsLabelText = "Please wait"
+        loadingNotification.detailsLabelText = "This may take a minute"
 
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0)){
                 
-        
                 let process = ProcessAndOCR()
                 self.text = process.recognizeImage(self.image!)
-                
+
                 dispatch_async(dispatch_get_main_queue()) {
                 
                     self.performSegueWithIdentifier("Try Text", sender: self.text)
@@ -38,28 +38,20 @@ class ImageViewController: UIViewController, G8TesseractDelegate {
                     loadingNotification.hide(true)
                 }
             }
-        
-        
-    }
+        }
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //UIImagePNGRepresentation(image!)
-        let processOCR = ProcessAndOCR()
-        image = processOCR.aspectRatio(self.image!, maxDimension: 640)
-
         imageView.image = image
         
-       
-
-
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    
     }
     
 

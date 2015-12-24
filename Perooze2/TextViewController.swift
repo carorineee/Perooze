@@ -29,8 +29,8 @@ class TextViewController: UIViewController {
         
         let searchAction = UIAlertAction(title: "Search", style: .Default) { action in
 
-            let searchWord = (alertController.textFields![0] as UITextField).text
-            self.highlightWord(self.text!, word: searchWord!)
+            self.searchWord = (alertController.textFields![0] as UITextField).text!
+            self.highlightWord(self.text!, word: self.searchWord)
         
         }
         
@@ -42,7 +42,7 @@ class TextViewController: UIViewController {
     
     
     
-    func findSubstring(substring: String, inString string: String) -> [NSRange] {
+    static func findSubstring(substring: String, inString string: String) -> [NSRange] {
         let string = NSString(string: string)
         
         var ranges = [NSRange]()
@@ -55,7 +55,8 @@ class TextViewController: UIViewController {
             foundRange = string.rangeOfString(substring, options: [], range: searchRange)
             if foundRange?.location == NSNotFound {
                 break
-            } else {
+            }
+            else {
                 ranges.append(foundRange!)
                 searchRange.location = foundRange!.location + foundRange!.length
             }
@@ -67,14 +68,14 @@ class TextViewController: UIViewController {
     
     func highlightWord(text: String, word: String) {
         
-        let ranges = findSubstring(searchWord, inString: text)
+        let ranges = TextViewController.findSubstring(searchWord, inString: text)
         let attributedText = NSMutableAttributedString(string: text)
 
-        for i in 0..<ranges.count {
-            attributedText.addAttribute(NSBackgroundColorAttributeName, value: UIColor.yellowColor(), range: ranges[i])
-
+        for range in ranges {
+            attributedText.addAttribute(NSBackgroundColorAttributeName, value: UIColor.yellowColor(), range: range)
         }
         
+
         outputText.attributedText = attributedText
         
     }
